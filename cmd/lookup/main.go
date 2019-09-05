@@ -32,7 +32,7 @@ func main() {
 		PreferGo: true,
 		Dial: func(ctx context.Context, network, address string) (net.Conn, error) {
 			d := net.Dialer{}
-			return d.DialContext(ctx, "tcp", *dnsServer+":53")
+			return d.DialContext(ctx, network, *dnsServer+":53")
 		},
 	}
 
